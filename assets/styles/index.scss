@@ -1,1 +1,40 @@
 @import '~bootstrap/scss/bootstrap';
+
+$body-bg-color: $white;
+
+body {
+  background-color: $body-bg-color;
+}
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.instructions {
+  border: solid 2px black;
+  text-align: left;
+  background: #ebe1c0;
+}
+
+.content {
+  background: #ebe1c0;
+}
+
+.panel {
+  border: solid 2px black;
+  background: #ebe1c0;
+  text-align: left;
+}
+
+.box {
+  border: solid black 1px;
+  font-size: 5vw;
+  background: #c2bdb6;
+  text-align: center;
+  color: white;
+  height: width;
+}
+
+.box:hover {
+  background: #9e9e9b;
+}
