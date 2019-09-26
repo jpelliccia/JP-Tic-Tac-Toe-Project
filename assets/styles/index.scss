@@ -6,37 +6,42 @@ body {
   background-color: $body-bg-color;
 }
 h1 {
+  color: #e65353;
+  font-family: 'Lobster', cursive;
   display: flex;
   justify-content: center;
 }
 
 .instructions {
   border: solid 2px black;
+  border-radius: 20px;
   text-align: left;
   background: #ebe1c0;
 }
 
 .content {
-  background: #ebe1c0;
+  background: white;
 }
 
 .panel {
   border: solid 2px black;
+  border-radius: 20px;
   background: #ebe1c0;
   text-align: left;
 }
 
 .box {
-  border: solid black 1px;
+  border: solid black 5px;
+  border-radius: 20px;
   font-size: 5vw;
   background: #c2bdb6;
   text-align: center;
-  color: white;
+  color: black;
   height: width;
 }
 
 .box:hover {
-  background: #9e9e9b;
+  background: #e65353;
 }
 
 .success {

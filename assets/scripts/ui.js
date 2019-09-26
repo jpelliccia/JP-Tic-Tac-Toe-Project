@@ -34,6 +34,9 @@ const onSignInSuccess = function (responseData) {
   console.log('store is', store)
   $('#tacBoard').show()
   $('#change-password').show()
+  $('#sign-out').show()
+  $('#sign-up').hide()
+  $('#sign-in').hide()
 }
 
 const onSignInFailure = function () {
@@ -53,6 +56,10 @@ const onSignOutSuccess = function (response) {
   successMessage('Signed out successfully!')
   $('#tacBoard').hide()
   $('#change-password').hide()
+  $('#sign-out').hide()
+  $('#sign-up').show()
+  $('#sign-in').show()
+  location.reload()
 }
 
 const onSignOutFailure = function (response) {
