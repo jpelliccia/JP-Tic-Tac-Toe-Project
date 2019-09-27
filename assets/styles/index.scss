@@ -33,9 +33,11 @@ h1 {
 .box {
   border: solid black 5px;
   border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 5vw;
   background: #c2bdb6;
-  text-align: center;
   color: black;
   height: width;
 }
