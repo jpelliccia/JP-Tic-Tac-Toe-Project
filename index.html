@@ -34,14 +34,14 @@
 <section id='tacBoard'>
 
   <div style="padding-bottom: 200px" class="col-12">
-    <h1 class="col-12" style="font-size:120px; color="#fc4c4c"">Tic-Tac-Toe</h1>
+    <h1 class="col-12" style="font-size:120px; color=#fc4c4c">Tic-Tac-Toe</h1>
     <h4 id='message-to-player'>Player X Begin's</h4>
     <div class="row">
       <div class="col-3 instructions"><h3>Instructions :</h3>
-        <h5><p>The first player starts by selecting a square. After the oppenent will choose the next open available square.
+        <h5>The first player starts by selecting a square. After the oppenent will choose the next open available square.
           A winner is chosen when a player gets three squares in a row with the same symbol either horizontlly, vertically,
           or diagonally. Enjoy the game!
-        </p></h5>
+        </h5>
         <form id='sign-out'>
         <h3>Sign-out</h3>
           <button>Sign Out</button>
@@ -73,12 +73,14 @@
           </div>
         </div>
       </div>
-      <div class="col-3 panel">
-        <h3><li>Username:</li></h3>
-        <br><h3><li>Wins:</li></h3>
-        <br><h3><li>Losses:</li></h3><br>
-        <button>New Game</button>
-      </div>
+      <section class='col-3 panel'>
+      <ul>
+        <li>Username:</li>
+        <li>Wins:</li>
+        <li>Losses:</li>
+      </ul>
+        <button id="NewGame">New Game</button>
+      </section>
     </div>
   </div>
 </section>
