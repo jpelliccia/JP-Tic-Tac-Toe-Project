@@ -3,6 +3,7 @@
 // require store object, so we can save the user
 // and their token
 const store = require('./store')
+// const authEvents = require('./events.js')
 
 const successMessage = function (newText) {
   $('#message').text(newText)
@@ -67,6 +68,28 @@ const onSignOutFailure = function (response) {
   console.log(response)
 }
 
+const onCreateNewGameSuccess = function (responseData) {
+  successMessage('Created new game!')
+  store.game = responseData.game
+  console.log('store is ' + store)
+  console.log(responseData)
+}
+
+const onCreateNewGameFailure = function () {
+  failureMessage('Created new game!')
+}
+
+const onUpdateGameSuccess = function (responseData) {
+  successMessage('Updated game!')
+  store.game = responseData.game
+  console.log(responseData)
+  console.log('store is ', store.game)
+}
+
+const onUpdateGameFailure = function () {
+  failureMessage('Failed to update')
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
@@ -75,5 +98,9 @@ module.exports = {
   onChangePasswordSuccess,
   onChangePasswordFailure,
   onSignOutSuccess,
-  onSignOutFailure
+  onSignOutFailure,
+  onCreateNewGameSuccess,
+  onCreateNewGameFailure,
+  onUpdateGameSuccess,
+  onUpdateGameFailure
 }

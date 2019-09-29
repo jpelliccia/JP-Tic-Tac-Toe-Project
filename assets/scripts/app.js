@@ -12,6 +12,10 @@ $(() => {
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('submit', authEvents.onSignOut)
+  $('#NewGame').on('click', function () {
+    onNewGame()
+    authEvents.onCreateNewGame()
+  })
 
   $('#tacBoard').hide()
   $('#change-password').hide()
@@ -21,7 +25,7 @@ $(() => {
   let move = 0
   let tacBoard = ['', '', '', '', '', '', '', '', '']
   const checkWins = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
-  // -----------------------------^^Local Data^^--------------------------------
+  // --------------------^^Local Data Variables^^-------------------------------
   const toCheckWin = function () {
     // console.log(checkWins[0])
     for (let i = 0; i < checkWins.length; i++) {
@@ -36,6 +40,7 @@ $(() => {
           }
           console.log('Win')
           $('#message-to-player').text('Player ' + tacBoard[firstNumber] + ' has won!')
+          authEvents.onUpdateGame('', '', 'true')
           console.log(move, 'moves')
           playerDraw = 1
         }
@@ -45,10 +50,12 @@ $(() => {
     if (move === 8) {
       if (playerDraw === 0) {
         $('#message-to-player').text('Tie Game!')
+        authEvents.onUpdateGame('', '', 'true')
         console.log(move, 'Tie')
       }
     }
     // -------------------------------------------------------------------------
+    playerDraw = 0
   }
 
   const onNewGame = function () {
@@ -58,29 +65,57 @@ $(() => {
     }
     tacBoard = ['', '', '', '', '', '', '', '', '']
     $('#message-to-player').text('New Game! Player X begins!')
-    addClickOnBox()
     playerDraw = 0
     move = 0
+    addClickOnBox()
   }
   $('#NewGame').on('click', onNewGame)
   // ---------------------------------------------------------------------------
 
   const addClickOnBox = function () {
+    // for (let i = 1; i < 10; i++) {
+    //   $('#box' + i).click(function () {
+    //     if (move % 2 === 0) {
+    //       $('#box' + i).text('X')
+    //       $('#message-to-player').text("Player O's turn")
+    //       tacBoard[i - 1] = 'X'
+    //       move++
+    //       toCheckWin()
+    //       console.log(tacBoard)
+    //       console.log(move)
+    //     } else {
+    //       $('#box' + i).text('O')
+    //       $('#message-to-player').text("Player X's turn")
+    //       tacBoard[i - 1] = 'O'
+    //       move++
+    //       toCheckWin()
+    //       console.log(tacBoard)
+    //       console.log(move)
+    //     }
+    //   })
+    // }
+
+  // -----------------^^For Loop code for simplification^^----------------------
+  // --If using this code must change move in playerDraw = to 9 instead of 8----
     $('#box1').click(function () {
       if ($('#box1').text() === '') {
         if (move % 2 === 0) {
           $('#box1').text('X')
           $('#message-to-player').text("Player O's turn")
           tacBoard[0] = 'X'
+          authEvents.onUpdateGame(0, 'X', 'false')
           toCheckWin()
           console.log(tacBoard)
+          console.log(move)
         }
         if (move % 2 === 1) {
           $('#box1').text('O')
           $('#message-to-player').text("Player X's turn")
           tacBoard[0] = 'O'
+          authEvents.onUpdateGame(0, 'O', 'false')
           toCheckWin()
           console.log(tacBoard)
+          console.log(move)
         }
         move++
       }
@@ -92,15 +127,19 @@ $(() => {
           $('#box2').text('X')
           $('#message-to-player').text("Player O's turn")
           tacBoard[1] = 'X'
+          authEvents.onUpdateGame(1, 'X', 'false')
           toCheckWin()
           console.log(tacBoard)
+          console.log(move)
         }
         if (move % 2 === 1) {
           $('#box2').text('O')
           $('#message-to-player').text("Player X's turn")
           tacBoard[1] = 'O'
+          authEvents.onUpdateGame(1, 'O', 'false')
           toCheckWin()
           console.log(tacBoard)
+          console.log(move)
         }
         move++
       }
@@ -111,15 +150,19 @@ $(() => {
           $('#box3').text('X')
           $('#message-to-player').text("Player O's turn")
           tacBoard[2] = 'X'
+          authEvents.onUpdateGame(2, 'X', 'false')
           toCheckWin()
           console.log(tacBoard)
+          console.log(move)
         }
         if (move % 2 === 1) {
           $('#box3').text('O')
           $('#message-to-player').text("Player X's turn")
           tacBoard[2] = 'O'
+          authEvents.onUpdateGame(2, 'O', 'false')
           toCheckWin()
           console.log(tacBoard)
+          console.log(move)
         }
         move++
       }
@@ -130,15 +173,19 @@ $(() => {
           $('#box4').text('X')
           $('#message-to-player').text("Player O's turn")
           tacBoard[3] = 'X'
+          authEvents.onUpdateGame(3, 'X', 'false')
           toCheckWin()
           console.log(tacBoard)
+          console.log(move)
         }
         if (move % 2 === 1) {
           $('#box4').text('O')
           $('#message-to-player').text("Player X's turn")
           tacBoard[3] = 'O'
+          authEvents.onUpdateGame(3, 'O', 'false')
           toCheckWin()
           console.log(tacBoard)
+          console.log(move)
         }
         move++
       }
@@ -149,15 +196,19 @@ $(() => {
           $('#box5').text('X')
           $('#message-to-player').text("Player O's turn")
           tacBoard[4] = 'X'
+          authEvents.onUpdateGame(4, 'X', 'false')
           toCheckWin()
           console.log(tacBoard)
+          console.log(move)
         }
         if (move % 2 === 1) {
           $('#box5').text('O')
           $('#message-to-player').text("Player X's turn")
           tacBoard[4] = 'O'
+          authEvents.onUpdateGame(4, 'O', 'false')
           toCheckWin()
           console.log(tacBoard)
+          console.log(move)
         }
         move++
       }
@@ -168,15 +219,19 @@ $(() => {
           $('#box6').text('X')
           $('#message-to-player').text("Player O's turn")
           tacBoard[5] = 'X'
+          authEvents.onUpdateGame(5, 'X', 'false')
           toCheckWin()
           console.log(tacBoard)
+          console.log(move)
         }
         if (move % 2 === 1) {
           $('#box6').text('O')
           $('#message-to-player').text("Player X's turn")
           tacBoard[5] = 'O'
+          authEvents.onUpdateGame(5, 'O', 'false')
           toCheckWin()
           console.log(tacBoard)
+          console.log(move)
         }
         move++
       }
@@ -187,15 +242,19 @@ $(() => {
           $('#box7').text('X')
           $('#message-to-player').text("Player O's turn")
           tacBoard[6] = 'X'
+          authEvents.onUpdateGame(6, 'X', 'false')
           toCheckWin()
           console.log(tacBoard)
+          console.log(move)
         }
         if (move % 2 === 1) {
           $('#box7').text('O')
           $('#message-to-player').text("Player X's turn")
           tacBoard[6] = 'O'
+          authEvents.onUpdateGame(6, 'O', 'false')
           toCheckWin()
           console.log(tacBoard)
+          console.log(move)
         }
         move++
       }
@@ -206,15 +265,19 @@ $(() => {
           $('#box8').text('X')
           $('#message-to-player').text("Player O's turn")
           tacBoard[7] = 'X'
+          authEvents.onUpdateGame(7, 'X', 'false')
           toCheckWin()
           console.log(tacBoard)
+          console.log(move)
         }
         if (move % 2 === 1) {
           $('#box8').text('O')
           $('#message-to-player').text("Player X's turn")
           tacBoard[7] = 'O'
+          authEvents.onUpdateGame(7, 'O', 'false')
           toCheckWin()
           console.log(tacBoard)
+          console.log(move)
         }
         move++
       }
@@ -225,15 +288,19 @@ $(() => {
           $('#box9').text('X')
           $('#message-to-player').text("Player O's turn")
           tacBoard[8] = 'X'
+          authEvents.onUpdateGame(8, 'X', 'false')
           toCheckWin()
           console.log(tacBoard)
+          console.log(move)
         }
         if (move % 2 === 1) {
           $('#box9').text('O')
           $('#message-to-player').text("Player X's turn")
           tacBoard[8] = 'O'
+          authEvents.onUpdateGame(8, 'O', 'false')
           toCheckWin()
           console.log(tacBoard)
+          console.log(move)
         }
         move++
       }

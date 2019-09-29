@@ -42,9 +42,60 @@ const signOut = function () {
   })
 }
 
+const createNewGame = function () {
+  return $.ajax({
+    method: 'POST',
+    url: config.apiUrl + '/games',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {}
+  })
+}
+
+const updateGame = function (Index, Value, Over) {
+  const gameDataInfo = {
+    game: {
+      cell: {
+        index: Index,
+        value: Value
+      },
+      over: false
+    }
+  }
+
+  const overGameData = {
+    game: {
+      over: true
+    }
+  }
+
+  if (Over === 'false') {
+    return $.ajax({
+      method: 'PATCH',
+      url: config.apiUrl + '/games/' + store.game.id,
+      headers: {
+        Authorization: 'Token token=' + store.user.token
+      },
+      data: gameDataInfo
+    })
+  } else if (Over === 'true') {
+    return $.ajax({
+      method: 'PATCH',
+      url: config.apiUrl + '/games/' + store.game.id,
+      headers: {
+        Authorization: 'Token token=' + store.user.token
+      },
+      data: overGameData
+    })
+  }
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  createNewGame,
+  updateGame
 }

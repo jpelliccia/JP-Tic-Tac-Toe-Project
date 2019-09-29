@@ -16,7 +16,7 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   event.preventDefault()
-
+  $('#boardSelf').hide()
   const form = event.target
   const formData = getFormFields(form)
   api.signIn(formData)
@@ -42,9 +42,26 @@ const onSignOut = function (event) {
     .catch(ui.onSignOutFailure)
 }
 
+const onCreateNewGame = function () {
+  console.log('onCreateNewGame')
+  $('#boardSelf').show()
+  api.createNewGame()
+    .then(ui.onCreateNewGameSuccess)
+    .catch(ui.onCreateNewGameFailure)
+}
+
+const onUpdateGame = function (index, value, over) {
+  console.log('onUpdateGame')
+  api.updateGame(index, value, over)
+    .then(ui.onUpdateGameSuccess)
+    .catch(ui.onUpdateGameFailure)
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
-  onSignOut
+  onSignOut,
+  onCreateNewGame,
+  onUpdateGame
 }
