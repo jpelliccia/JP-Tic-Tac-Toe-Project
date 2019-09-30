@@ -41,6 +41,7 @@ const onSignInSuccess = function (responseData) {
 }
 
 const onSignInFailure = function () {
+  location.reload()
   failureMessage('Sign in failed')
 }
 

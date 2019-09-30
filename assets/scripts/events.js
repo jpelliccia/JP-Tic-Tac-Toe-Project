@@ -17,6 +17,8 @@ const onSignUp = function (event) {
 const onSignIn = function (event) {
   event.preventDefault()
   $('#boardSelf').hide()
+  $('#loginBox').hide() // login box hid after sign in
+  $('#titleRoll').hide()
   const form = event.target
   const formData = getFormFields(form)
   api.signIn(formData)

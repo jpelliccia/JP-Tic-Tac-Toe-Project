@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+      <link rel="stylesheet" href="animate.min.css">
       <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
-      <title>Example</title>
+      <link href="https://fonts.googleapis.com/css?family=Bangers&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Faster+One&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
+      <title>Tic-Tac-Toe</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -14,44 +18,45 @@
     </head>
 
 <body>
-  <h2 id="message"></h2>
-  <form id='sign-up'>
-    <h2>Not a registered player? Sign up!</h2>
-          <input type="email" name="credentials[email]" placeholder='Enter email...' >
-          <input type="password" name="credentials[password]" placeholder='Enter password' >
-          <input type="password" name="credentials[password_confirmation]" placeholder='Confirm password' >
-          <button>Sign Up</button>
+  <div>
+    <h1 class="animated tada infinite" style="font-size:120px" id="titleRoll">Tic-Tac-Toe</h1>
+       <section id="loginBox">
+
+          <form id='sign-up'>
+                <h2>Not a registered player? Sign up!</h2>
+                    <input type="email" name="credentials[email]" placeholder='Enter email...' >
+                    <input type="password" name="credentials[password]" placeholder='Enter password' >
+                    <input type="password" name="credentials[password_confirmation]" placeholder='Confirm password' >
+                    <button>Sign Up</button>
           </form>
 
-
-<form id='sign-in'>
-        <h2>Already a player? Sign in!</h2>
-          <input type="email" name="credentials[email]" placeholder='Enter email...' >
-          <input type="password" name="credentials[password]" placeholder='Enter password' >
-          <button>Sign In</button>
+          <form id='sign-in'>
+                <h2>Already a player? Sign in!</h2>
+                    <input type="email" name="credentials[email]" placeholder='Enter email...' >
+                    <input type="password" name="credentials[password]" placeholder='Enter password' >
+                    <button>Sign In</button>
           </form>
-
+        </section>
+  </div>
+<h2 id="message"></h2>
 <section id='tacBoard'>
 
   <div style="padding-bottom: 200px" class="col-12">
-    <h1 class="col-12" style="font-size:120px; color=#fc4c4c">Tic-Tac-Toe</h1>
-    <h4 id='message-to-player'>Player X Begin's</h4>
+    <h1 class="animated zoomIn delay-.5s" style="font-size:120px; color=#fc4c4c">Tic-Tac-Toe</h1>
+    <h4 id='message-to-player'></h4>
     <div class="row">
-      <div class="col-3 instructions"><h3>Instructions :</h3>
-        <h5>The first player starts by selecting a square. After the oppenent will choose the next open available square.
-          A winner is chosen when a player gets three squares in a row with the same symbol either horizontlly, vertically,
-          or diagonally. Enjoy the game!
+      <div class="col-3 instructions">
+        <br>
+        <button class="newGameButton" id="NewGame">Start new game</button>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h3>Instructions :</h3>
+        <h5>
+          Player X starts by selecting a square first, then Player O will go next. The first player to get three of the same symbols, either horizontlly, vertically, or diagonally wins!
+          Enjoy the game!
         </h5>
-        <form id='sign-out'>
-        <h3>Sign-out</h3>
-          <button>Sign Out</button>
-            </form>
-    <form id='change-password'>
-        <h3>Change Password</h3>
-          <input type="password" name="passwords[old]" placeholder='Enter old password' >
-          <input type="password" name="passwords[new]" placeholder='Enter new password' >
-          <button>Change Password</button>
-          </form>
       </div>
 
       <div class="col-6 content" id='boardSelf'>
@@ -74,16 +79,22 @@
         </div>
       </div>
       <section class='col-3 panel'>
-      <ul>
-        <li>Username:</li>
-        <li>Wins:</li>
-        <li>Losses:</li>
-      </ul>
-        <button id="NewGame">New Game</button>
+        <form id='change-password'>
+            <h3>Change Password</h3>
+              <input type="password" name="passwords[old]" placeholder='Enter old password' >
+              <input type="password" name="passwords[new]" placeholder='Enter new password' >
+              <button class="changePasswordButton">Change Password</button>
+              </form>
+              <br>
+        <form id='sign-out'>
+              <h3>Sign-out</h3>
+                <button class="signOutButton">Sign Out</button>
+              </form>
       </section>
     </div>
   </div>
 </section>
+<footer class="endNote">Created by: Joseph Pelliccia</footer>
 </body>
 
 </html>

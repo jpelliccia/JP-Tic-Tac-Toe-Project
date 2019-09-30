@@ -1,11 +1,15 @@
 @import '~bootstrap/scss/bootstrap';
+@import '~animate.css/animate.css';
 
-$body-bg-color: $white;
+$body-bg-color: #e0e0da;
 
 body {
   background-color: $body-bg-color;
 }
+
 h1 {
+
+  text-shadow: 5px 5px 10px black, 0 0 25px black, 0 0 5px black;
   color: #e65353;
   font-family: 'Lobster', cursive;
   display: flex;
@@ -13,21 +17,24 @@ h1 {
 }
 
 .instructions {
+  font-family: 'Rubik', sans-serif;
   border: solid 2px black;
   border-radius: 20px;
   text-align: left;
-  background: #ebe1c0;
+  background: #edead1;
 }
 
 .content {
-  background: white;
+  background: #e0e0da;
 }
 
 .panel {
+  font-family: 'Rubik', sans-serif;
   border: solid 2px black;
   border-radius: 20px;
-  background: #ebe1c0;
   text-align: left;
+  background: #edead1;
+
 }
 
 .box {
@@ -40,10 +47,44 @@ h1 {
   background: #c2bdb6;
   color: black;
   height: width;
+  font-family: 'Faster One', cursive;
 }
 
 .box:hover {
   background: #e65353;
+}
+
+#loginBox {
+
+  font-family: 'Rubik', sans-serif;
+  border: solid black 5px;
+  border-radius: 5px;
+  width: 400px;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  margin-bottom: 150px;
+  padding: 25px;
+}
+
+#titleRoll {
+  margin-top: 50px;
+}
+
+
+#message-to-player {
+  display: flex;
+  justify-content: center;
+  width:600px;
+  margin : auto;
+  font-family: 'Bangers', cursive;
+  // font-family: 'Bungee Inline', cursive;
+  // font-family: 'Faster One', cursive;
+  font-size: 60px;
+  text-shadow: 5px 5px 10px #e65353, 0 0 25px #e65353, 0 0 5px #e65353;
+  color: white;
+
 }
 
 .success {
@@ -52,4 +93,79 @@ h1 {
 
 .failure {
   color: red;
+}
+
+.newGameButton {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.changePasswordButton {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.signOutButton {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #e65353;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.endNote {
+  font-family: 'Bangers', cursive;
+  font-size: 60px;
+  text-shadow: 5px 5px 10px #e65353, 0 0 25px #e65353, 0 0 5px #e65353;
 }
