@@ -37,6 +37,7 @@ to urge me to continue playing.
 - Create a user vs. computer AI mode.
 - Be able to track the amount of games each specific user has played, and their
 wins / losses.
+- Play audio sound for when you click each square and for when you win the game.
 
 
 ## Technologies

@@ -17,7 +17,8 @@ h1 {
 }
 
 .instructions {
-  font-family: 'Rubik', sans-serif;
+  // font-family: 'Rubik', sans-serif;
+  font-family: 'Bangers', cursive;
   border: solid 2px black;
   border-radius: 20px;
   text-align: left;
@@ -29,7 +30,8 @@ h1 {
 }
 
 .panel {
-  font-family: 'Rubik', sans-serif;
+  // font-family: 'Rubik', sans-serif;
+  font-family: 'Bangers', cursive;
   border: solid 2px black;
   border-radius: 20px;
   text-align: left;
@@ -56,7 +58,8 @@ h1 {
 
 #loginBox {
 
-  font-family: 'Rubik', sans-serif;
+  // font-family: 'Rubik', sans-serif;
+  font-family: 'Bangers', cursive;
   border: solid black 5px;
   border-radius: 5px;
   width: 400px;
@@ -66,6 +69,8 @@ h1 {
   margin-top: 50px;
   margin-bottom: 150px;
   padding: 25px;
+  text-shadow: 5px 5px 10px #e65353, 0 0 25px #e65353, 0 0 5px #e65353;
+  color: white;
 }
 
 #titleRoll {
@@ -86,6 +91,14 @@ h1 {
   color: white;
 
 }
+
+// #sign-in {
+//   text-shadow: 5px 5px 10px #04c925, 0 0 25px #04c925, 0 0 5px #04c925;
+// }
+//
+// #sign-up {
+//   text-shadow: 5px 5px 10px #04c925, 0 0 25px #04c925, 0 0 5px #04c925;
+// }
 
 .success {
   color: green;
