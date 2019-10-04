@@ -23,6 +23,7 @@ const onSignUpSuccess = function () {
 
 const onSignUpFailure = function (response) {
   failureMessage('Sign up failed')
+  $('#sign-up').trigger('reset')
   console.log(response)
 }
 
@@ -38,11 +39,16 @@ const onSignInSuccess = function (responseData) {
   $('#sign-out').show()
   $('#sign-up').hide()
   $('#sign-in').hide()
+  $('#boardSelf').hide()
+  $('#loginBox').hide() // login box hid after sign in
+  $('#titleRoll').hide()
 }
 
-const onSignInFailure = function () {
-  location.reload()
+const onSignInFailure = function (response) {
   failureMessage('Sign in failed')
+  $('#sign-in').trigger('reset')
+  console.log(response)
+  // location.reload() // ???????????
 }
 
 const onChangePasswordSuccess = function () {

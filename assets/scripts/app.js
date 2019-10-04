@@ -306,6 +306,12 @@ $(() => {
       }
     })
   }
+
+  // const highlightWin = function () {
+  //   if (toCheckWin === 'X') {
+  //     $('#box')
+  //   }
+  // }
   const runGame = function () {
     addClickOnBox()
   }
