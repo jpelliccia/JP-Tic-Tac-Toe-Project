@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" href="animate.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Bangers&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Faster+One&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
+      <title>Tic-Tac-Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+
+<body>
+  <div>
+    <h1 class="animated tada infinite" style="font-size:120px" id="titleRoll">Tic-Tac-Toe</h1>
+       <section id="loginBox">
+
+          <form id='sign-up'>
+                <h2>Not a registered player? Sign up!</h2>
+                    <input type="email" name="credentials[email]" placeholder='Enter email...' >
+                    <input type="password" name="credentials[password]" placeholder='Enter password' >
+                    <input type="password" name="credentials[password_confirmation]" placeholder='Confirm password' >
+                    <button>Sign Up</button>
+          </form>
+
+          <form id='sign-in'>
+                <h2>Already a player?</h2>
+                 <h2>Sign in!</h2>
+                    <input type="email" name="credentials[email]" placeholder='Enter email...' >
+                    <input type="password" name="credentials[password]" placeholder='Enter password' >
+                    <button>Sign In</button>
+          </form>
+        </section>
+  </div>
+<h2 id="message"></h2>
+<section id='tacBoard'>
+
+  <div style="padding-bottom: 200px" class="col-12">
+    <h1 class="animated zoomIn delay-.5s" style="font-size:120px; color=#fc4c4c">Tic-Tac-Toe</h1>
+    <h4 id='message-to-player'></h4>
+    <div class="row">
+      <div class="col-3 instructions">
+        <br>
+        <button class="newGameButton" id="NewGame">Start new game</button>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h3>Instructions :</h3>
+        <h5>
+          Player X starts by selecting a square first, then Player O will go next. The first player to get three of the same symbols, either horizontlly, vertically, or diagonally wins!
+          Enjoy the game!
+        </h5>
+      </div>
+
+      <div class="col-6 content" id='boardSelf'>
+        <div class="container">
+          <div class="row">
+            <div style="height:180px" class="col-4 box" id="box1"></div>
+            <div style="height:180px" class="col-4 box" id="box2"></div>
+            <div style="height:180px" class="col-4 box" id="box3"></div>
+          </div>
+          <div class="row">
+            <div style="height:180px" class="col-4 box" id="box4"></div>
+            <div style="height:180px" class="col-4 box" id="box5"></div>
+            <div style="height:180px" class="col-4 box" id="box6"></div>
+          </div>
+          <div class="row">
+            <div style="height:180px" class="col-4 box" id="box7"></div>
+            <div style="height:180px" class="col-4 box" id="box8"></div>
+            <div style="height:180px" class="col-4 box" id="box9"></div>
+          </div>
+        </div>
+      </div>
+      <section class='col-3 panel'>
+        <form id='change-password'>
+            <h3>Change Password</h3>
+              <input type="password" name="passwords[old]" placeholder='Enter old password' >
+              <input type="password" name="passwords[new]" placeholder='Enter new password' >
+              <button class="changePasswordButton">Change Password</button>
+              </form>
+              <br>
+        <form id='sign-out'>
+              <h3>Sign-out</h3>
+                <button class="signOutButton">Sign Out</button>
+              </form>
+      </section>
+    </div>
+  </div>
+</section>
+<footer class="endNote">Created by: Joseph Pelliccia</footer>
+</body>
+
+</html>
