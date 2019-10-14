@@ -23,14 +23,12 @@ was completed or not and we are sent back response data from the server.
 
 https://i.imgur.com/KJf46D7.jpg?1
 
-- As a new user, I would like to smoothly create a username that will save my progress
-with wins and losses so that I can see my stats.
-- As a concurrent user, I want to sign in easily and jump right into the game,
-as well as be able to start a new game upon winning or losing so I can keep playing.
-- As a new user to tic-tac-toe, I would like a list of instructions on how to
-play so I can enhance my skill.
-- As a frequent user, I would like a nice prompt message telling me I have won/lost
-to urge me to continue playing.
+- As a user, I would like to create a username and start a new game.
+- As a user, I would like to start a new game upon winning or losing & keep playing.
+- As a user, I would like a list of instructions on how to play so I can enhance my skill.
+- As a user, I would like a nice prompt message telling me I have won/lost.
+- As a user, I would like a clean layout that is visually appealing.
+- As a user, I would like success and error messages informing me after I have done actions.
 
 ## Future Additions
 
@@ -38,6 +36,7 @@ to urge me to continue playing.
 - Be able to track the amount of games each specific user has played, and their
 wins / losses.
 - Play audio sound for when you click each square and for when you win the game.
+- Hightlight a row when a user has won the game.
 
 
 ## Technologies
@@ -48,6 +47,11 @@ For this project I used:
 * jQuery
 * DOM
 * AJAX
+* Bootstrap
+* SASS
 
 ## Setup
-To run this project, fork and clone this GitHub repository.
+1) To run this project, fork and clone this GitHub repository.
+2) Checkout into a new branch.
+3) Install dependencies with npm install.
+4) Run grunt serve to pull up the local host and run this project locally.
